@@ -35,9 +35,8 @@ public class WeatherService {
 
         ResponseEntity<WeatherStackResponse> responseEntity = restTemplate.exchange(weatherStackUrl, HttpMethod.GET, null, WeatherStackResponse.class);
 
-        if (responseEntity.getStatusCode() != HttpStatus.OK && !Objects.isNull(responseEntity.getBody())) {
+        if (responseEntity.getStatusCode() == HttpStatus.OK && !Objects.isNull(responseEntity.getBody())) {
             WeatherStackResponse wsResponse = responseEntity.getBody();
-
             return new WeatherResponse(wsResponse.getCurrent().getWindSpeed(), wsResponse.getCurrent().getTemperature());
         } else {
             // failover
