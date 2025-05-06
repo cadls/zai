@@ -25,7 +25,7 @@ The service uses Weatherstack as the primary API ans OpenWeather as a fallback i
 3. Run the application
 > ./gradlew bootRun
 
-### Improvements
+### To Improve
 - Improve error handling with custom exception and global exception handler
 - Add API Authorization
 - Add Unit & Integration Tests
